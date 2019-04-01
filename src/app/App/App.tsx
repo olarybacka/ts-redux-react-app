@@ -13,7 +13,7 @@ export default ({ history: { push } }: Props) => (
   <div className="App">
     <Header />
     <div onClick={() => push("/first")}>First</div>
-    <div onClick={() => push("/second")}>Second</div>
+    <div onClick={() => push("/task-list")}>Second</div>
     <Switch>
       <Route exact path="/first" render={() => <div>First Page</div>} />
       <Route exact path="/task-list" component={TaskList} />
