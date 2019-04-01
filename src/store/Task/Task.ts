@@ -1,9 +1,14 @@
 export type Task = {
-	id: string
-	title: string
-	description: string
+  id: string
+  title: string
+  description: string
 }
-export interface Action<T> {
-	type: string
-	payload?: T
+
+export type TaskState = {
+  tasks: ReadonlyArray<Task>
+  task: Task | null
+  count: number
+  previos: number | null
+  next: number | null
+  error: string
 }
