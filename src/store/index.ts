@@ -5,8 +5,9 @@ import { combineEpics, createEpicMiddleware } from "redux-observable"
 import { connectRouter } from "connected-react-router"
 import { composeWithDevTools } from "redux-devtools-extension"
 
-import { history } from "../common/services/history"
-import { taskReducer, TaskState } from "./Task"
+import { history } from "../common/services"
+
+import { taskReducer, TaskState, taskEpics } from "./Task"
 
 export type RootState = {
   history: (history: History) => any
@@ -22,7 +23,7 @@ const createRootReducer = (history: History) =>
   })
 
 const epicMiddleware = createEpicMiddleware()
-const rootEpic = combineEpics()
+const rootEpic: any = combineEpics(taskEpics)
 
 const store = createStore(
   createRootReducer(history),

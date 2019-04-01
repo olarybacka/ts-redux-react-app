@@ -3,6 +3,7 @@ import { History } from "history"
 import { Route, Switch } from "react-router-dom"
 
 import { Header } from "../Header"
+import { TaskList } from "./Task"
 import "./App.css"
 
 export interface Props {
@@ -15,7 +16,7 @@ export default ({ history: { push } }: Props) => (
     <div onClick={() => push("/second")}>Second</div>
     <Switch>
       <Route exact path="/first" render={() => <div>First Page</div>} />
-      <Route exact path="/second" render={() => <div>Second Page</div>} />
+      <Route exact path="/task-list" component={TaskList} />
     </Switch>
   </div>
 )
