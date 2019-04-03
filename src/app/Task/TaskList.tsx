@@ -5,7 +5,7 @@ import { RootState } from "../../store"
 import { connect } from "react-redux"
 
 type ParamsProps = null
-interface Props extends RouteComponentProps<ParamsProps> {
+export interface Props extends RouteComponentProps<ParamsProps> {
   tasks: ReadonlyArray<Task>
   getTasks: () => void
 }
@@ -17,7 +17,7 @@ const TaskList = ({ tasks, getTasks }: Props): JSX.Element => {
   return (
     <>
       <h3>TaskList</h3>
-      <div>
+      <div className="list">
         {tasks.map(({ id, title }) => (
           <div key={id}>{title}</div>
         ))}
