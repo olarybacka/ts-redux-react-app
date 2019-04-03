@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { RouteComponentProps } from "react-router-dom"
-import { Task, actionCreators } from "../../../store/Task"
-import { RootState } from "../../../store"
+import { Task, actionCreators } from "../../store/Task"
+import { RootState } from "../../store"
 import { connect } from "react-redux"
 
 type ParamsProps = null
@@ -13,7 +13,7 @@ interface Props extends RouteComponentProps<ParamsProps> {
 const TaskList = ({ tasks, getTasks }: Props): JSX.Element => {
   useEffect(() => {
     getTasks()
-  })
+  }, [])
   return (
     <>
       <h3>TaskList</h3>

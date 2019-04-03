@@ -3,7 +3,7 @@ import { History } from "history"
 import { Route, Switch } from "react-router-dom"
 
 import { Header } from "../Header"
-import { TaskList } from "./Task"
+import { TaskList } from "../Task"
 import "./App.css"
 
 export interface Props {
