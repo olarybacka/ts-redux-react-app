@@ -1,15 +1,6 @@
-import { actionCreators } from ".."
+import { actionCreators, CalendarState, Action } from ".."
 
 const currDate = new Date()
-
-export interface CalendarState {
-  year: number
-  month: number
-}
-
-export type Action = {
-  type: string
-}
 
 export const INITIAL_STATE: CalendarState = {
   year: currDate.getFullYear(),
