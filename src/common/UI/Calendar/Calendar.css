@@ -1,17 +1,80 @@
-.day {
-  width: 30px;
-  display: inline-flex;
+h4 {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
-.week {
-  flex-direction: row;
+button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 28px;
+  height: 28px;
+  overflow: hidden;
+  color: #282c34;
+  background-color: #282c34;
+  padding: 0;
+  border: none;
+  transition: 0.150s linear;
+
 }
 
+button:hover {
+  background-color: #61dafb;
+  color: #61dafb;
+}
+
+button:focus {
+  outline: none;
+}
+
+button.prev:before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #ececec;
+}
+
+button.next:before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #ececec;
+}
+
+button:last-of-type {
+  left: 48px;
+}
+
+.month-label {
+  text-transform: capitalize;
+}
 .month {
-  display: flex;
-  flex-direction: column;
+  margin: 20px 10px 10px 10px;
+  border: 1px solid #ececec;
 }
-
-.container {
-  text-align: center;
+.week {
+  display: flex;
+  height: 100px;
+}
+.day {
+  display: inline-flex;
+  flex: 1 1;
+  border: 1px solid #ececec;
+  padding: 5px;
+  line-height: 0.8rem;
+  transition: 0.150s linear;
+}
+.day:hover {
+  background-color: #61dafb;
 }
