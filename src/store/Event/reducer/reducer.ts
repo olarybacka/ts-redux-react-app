@@ -1,5 +1,5 @@
+import { actionCreators, EventState } from ".."
 import { Action } from "../../actionCreator"
-import { EventState, actionCreators } from ".."
 
 export const INITIAL_STATE: EventState = {
   events: [],
@@ -10,7 +10,10 @@ export const INITIAL_STATE: EventState = {
   next: null,
 }
 
-export default (state: EventState = INITIAL_STATE, { type, payload }: Action<any>): EventState => {
+export default (
+  state: EventState = INITIAL_STATE,
+  { type, payload }: Action<any>,
+): EventState => {
   switch (type) {
     case actionCreators.updateEvents.type:
       return {

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
-import { RouteComponentProps } from "react-router-dom"
-import { Task, actionCreators } from "../../store/Task"
-import { RootState } from "../../store"
 import { connect } from "react-redux"
+import { RouteComponentProps } from "react-router-dom"
+import { RootState } from "../../store"
+import { actionCreators, Task } from "../../store/Task"
 
 type ParamsProps = null
 export interface Props extends RouteComponentProps<ParamsProps> {

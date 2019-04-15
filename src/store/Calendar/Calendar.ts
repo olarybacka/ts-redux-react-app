@@ -3,6 +3,6 @@ export interface CalendarState {
   month: number
 }
 
-export type Action = {
+export interface Action {
   type: string
 }

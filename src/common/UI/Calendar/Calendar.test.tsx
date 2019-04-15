@@ -1,7 +1,7 @@
-import React from "react"
-import { shallow } from "enzyme"
-import { format, addMonths } from "date-fns"
+import { addMonths, format } from "date-fns"
 import pl from "date-fns/locale/pl"
+import { shallow } from "enzyme"
+import React from "react"
 import Calendar from "./Calendar"
 
 describe("Calendar", () => {

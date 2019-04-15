@@ -1,5 +1,5 @@
-import ActionCreator from "../actionCreator"
 import { Event } from "."
+import ActionCreator from "../actionCreator"
 
 export default {
   getEvents: ActionCreator<null>("EVENT_GET_EVENTS"),
