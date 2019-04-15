@@ -32,4 +32,30 @@ module.exports = () => ({
       name: "Category #2",
     },
   ],
+  events: [
+    {
+      id: 1,
+      name: 'test',
+      startDate: new Date(),
+      endDate: new Date(),
+      description: "Event 1",
+      location: 'string',
+      category: {
+        id: 1,
+        name: 'string'
+      }
+    },
+    {
+      id: 2,
+      name: 'test 2',
+      startDate: new Date(),
+      endDate: new Date(),
+      description: "Event 2",
+      location: 'string',
+      category: {
+        id: 2,
+        name: 'string'
+      }
+    }
+  ],
 })
