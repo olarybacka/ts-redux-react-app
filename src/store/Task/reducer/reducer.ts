@@ -1,4 +1,4 @@
-import { Action } from "../../actionCreator"
+import { Action } from "../.."
 import { TaskState, actionCreators } from ".."
 
 export const INITIAL_STATE: TaskState = {
