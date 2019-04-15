@@ -1,4 +1,3 @@
-/// <reference path="../../../../declarations/calendar.d.ts" />
 import { Calendar } from "calendar"
 import { format } from "date-fns"
 import pl from "date-fns/locale/pl"
@@ -12,7 +11,7 @@ import {
 } from "../../../store/Calendar"
 import "./Calendar.css"
 
-const cMon = new Calendar(1)
+const { monthDays } = new Calendar(1)
 const { increment, decrement } = actionCreators
 
 const renderDay = (day: number, i: number) => (
@@ -26,11 +25,13 @@ const renderWeek = (week: number[], i: number) => (
   </div>
 )
 
+type UseReducer = [CalendarState, (action: Action) => void]
+
 export default () => {
-  const [{ year, month }, dispatch]: [
-    CalendarState,
-    (action: Action) => void
-  ] = useReducer(reducer, INITIAL_STATE)
+  const [{ year, month }, dispatch]: UseReducer = useReducer(
+    reducer,
+    INITIAL_STATE,
+  )
   return (
     <>
       <h4 className="month-label">
@@ -43,7 +44,7 @@ export default () => {
       >
         prev
       </button>
-      <div className="month">{cMon.monthDays(year, month).map(renderWeek)}</div>
+      <div className="month">{monthDays(year, month).map(renderWeek)}</div>
       <button
         className="next"
         onClick={() => dispatch(increment.create())}
