@@ -33,7 +33,7 @@ export default () => {
   )
   return (
     <>
-      <h4 className="month-label">{currentDay} {format(new Date(year, month), "MMMM", { locale: pl })}</h4>
+      <h4 className="month-label">{format(new Date(year, month), "MMMM", { locale: pl })}</h4>
       <button className="prev" onClick={() => dispatch(decrement.create())} type="button">
         prev
       </button>

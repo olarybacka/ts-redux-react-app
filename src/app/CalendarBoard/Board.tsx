@@ -6,7 +6,7 @@ export default () => {
   return (
     <>
       <h3>Calendar Board</h3>
-      <div className="main-wrapper">
+      <div className="calendar-wrapper">
         <Calendar />
       </div>
     </>
