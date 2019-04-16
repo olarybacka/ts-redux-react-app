@@ -1,10 +1,10 @@
-export type Task = {
+export interface Task {
   id: number
   title: string
   description: string
 }
 
-export type TaskState = {
+export interface TaskState {
   tasks: ReadonlyArray<Task>
   task: Task | null
   count: number

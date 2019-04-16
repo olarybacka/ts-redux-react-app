@@ -1,5 +1,5 @@
-import ActionCreator from "../actionCreator"
 import { Task } from "."
+import ActionCreator from "../actionCreator"
 
 export default {
   getTasks: ActionCreator<null>("TASK_GET_TASKS"),

@@ -4,6 +4,6 @@ export interface CalendarState {
   currentDay: number
 }
 
-export type Action = {
+export interface Action {
   type: string
 }

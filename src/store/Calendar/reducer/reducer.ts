@@ -1,4 +1,4 @@
-import { actionCreators, CalendarState, Action } from ".."
+import { Action, actionCreators, CalendarState } from ".."
 
 const currDate = new Date()
 
@@ -8,14 +8,19 @@ export const INITIAL_STATE: CalendarState = {
   currentDay: currDate.getDate(),
 }
 
-const incrementMonth = (current: number): number => (current === 11 ? 0 : current + 1)
-const decrementMonth = (current: number): number => (current === 0 ? 11 : current - 1)
+const incrementMonth = (current: number): number =>
+  current === 11 ? 0 : current + 1
+const decrementMonth = (current: number): number =>
+  current === 0 ? 11 : current - 1
 const incrementYear = (incMonth: number, currentYear: number): number =>
   incMonth === 0 ? currentYear + 1 : currentYear
 const decrementYear = (decMonth: number, currentYear: number): number =>
   decMonth === 11 ? currentYear - 1 : currentYear
 
-export default (state: CalendarState = INITIAL_STATE, { type }: Action): CalendarState => {
+export default (
+  state: CalendarState = INITIAL_STATE,
+  { type }: Action,
+): CalendarState => {
   switch (type) {
     case actionCreators.increment.type:
       return {

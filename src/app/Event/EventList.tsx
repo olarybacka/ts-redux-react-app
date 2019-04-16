@@ -2,36 +2,37 @@ import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import { RouteComponentProps } from "react-router-dom"
 import { RootState } from "../../store"
-import { actionCreators, Task } from "../../store/Task"
+import { actionCreators, Event } from "../../store/Event"
 
 type ParamsProps = null
 export interface Props extends RouteComponentProps<ParamsProps> {
-  tasks: ReadonlyArray<Task>
-  getTasks: () => void
+  events: ReadonlyArray<Event>
+  getEvents: () => void
 }
 
-const TaskList = ({ tasks, getTasks }: Props): JSX.Element => {
+const EventList = ({ events, getEvents }: Props): JSX.Element => {
   useEffect(() => {
-    getTasks()
+    getEvents()
   }, [])
   return (
     <>
-      <h3>TaskList</h3>
+      <h3>EventList</h3>
       <div className="list">
-        {tasks.map(({ id, title }) => (
-          <div key={id}>{title}</div>
+        {events.map(({ id, name }) => (
+          <div key={id}>{name}</div>
         ))}
       </div>
     </>
   )
 }
-const mapStateToProps = ({ task: { tasks } }: RootState) => ({
-  tasks,
+
+const mapStateToProps = ({ event: { events } }: RootState) => ({
+  events,
 })
 const mapDispatchToProps = {
-  getTasks: actionCreators.getTasks.create,
+  getEvents: actionCreators.getEvents.create,
 }
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(TaskList)
+)(EventList)

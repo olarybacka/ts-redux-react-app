@@ -1,4 +1,4 @@
-import { taskReducer, actionCreators, INITIAL_STATE } from ".."
+import { actionCreators, INITIAL_STATE, taskReducer } from ".."
 import { testTask } from "../../../fixtures/Task"
 
 describe("taskReducer", () => {
