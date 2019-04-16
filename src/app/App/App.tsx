@@ -1,11 +1,11 @@
-import React from "react"
 import { History } from "history"
+import React from "react"
 import { Route, Switch } from "react-router-dom"
 
+import { CalendarBoard } from "../CalendarBoard"
+import { EventList } from "../Event"
 import { Header } from "../Header"
 import { TaskList } from "../Task"
-import { EventList } from "../Event"
-import { CalendarBoard } from "../CalendarBoard"
 import "./App.css"
 
 export interface Props {

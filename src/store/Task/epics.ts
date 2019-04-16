@@ -1,9 +1,9 @@
-import { combineEpics, ofType, Epic } from "redux-observable"
+import { combineEpics, Epic, ofType } from "redux-observable"
 import { of } from "rxjs"
-import { mergeMap, catchError } from "rxjs/operators"
-import { apiUrl, ajax } from "../../common/services"
-import { Action, RootState } from ".."
+import { catchError, mergeMap } from "rxjs/operators"
 import { actionCreators } from "."
+import { Action, RootState } from ".."
+import { ajax, apiUrl } from "../../common/services"
 
 const { getTasks, getTask, updateTasks, updateTask, setError } = actionCreators
 

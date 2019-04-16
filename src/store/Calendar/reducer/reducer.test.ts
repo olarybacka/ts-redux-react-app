@@ -1,5 +1,5 @@
-import reducer, { CalendarState } from "./reducer"
-import { actionCreators } from ".."
+import { actionCreators, CalendarState } from ".."
+import reducer from "./reducer"
 
 describe("CalendarReducer", () => {
   it("increments to next year", () => {

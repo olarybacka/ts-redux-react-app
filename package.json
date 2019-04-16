@@ -18,6 +18,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "enzyme-to-json": "^3.3.5",
+    "history": "^4.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^6.0.1",
@@ -28,6 +29,8 @@
     "redux-mock-store": "^1.5.3",
     "redux-observable": "^1.1.0",
     "rxjs": "^6.4.0",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
     "typesafe-actions": "^3.2.1",
     "typescript": "3.4.1"
   },
@@ -36,7 +39,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server:run": "json-server --watch --port=4000 server/index.js "
+    "server": "json-server --watch --port=4000 server/index.js ",
+    "lint": "tslint 'src/**/*.{ts,tsx}'"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,5 +1,5 @@
+import { actionCreators, TaskState } from ".."
 import { Action } from "../.."
-import { TaskState, actionCreators } from ".."
 
 export const INITIAL_STATE: TaskState = {
   tasks: [],
@@ -10,7 +10,10 @@ export const INITIAL_STATE: TaskState = {
   next: null,
 }
 
-export default (state: TaskState = INITIAL_STATE, { type, payload }: Action<any>): TaskState => {
+export default (
+  state: TaskState = INITIAL_STATE,
+  { type, payload }: Action<any>,
+): TaskState => {
   switch (type) {
     case actionCreators.updateTasks.type:
       return {

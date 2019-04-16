@@ -1,6 +1,6 @@
 import { ajax } from "rxjs/ajax"
 
-type BaseHeaders = {
+interface BaseHeaders {
   "Content-Type": string
 }
 
@@ -9,17 +9,17 @@ const getBaseHeaders = (): BaseHeaders => ({
 })
 
 const get = (url: string, headers?: any) =>
-  ajax.get(url, Object.assign({}, getBaseHeaders(), headers))
+  ajax.get(url, { ...getBaseHeaders(), ...headers })
 const post = (url: string, body: any, headers: any) =>
-  ajax.post(url, body, Object.assign({}, getBaseHeaders(), headers))
+  ajax.post(url, body, { ...getBaseHeaders(), ...headers })
 
 const put = (url: string, body: any, headers?: any) =>
-  ajax.put(url, body, Object.assign({}, getBaseHeaders(), headers))
+  ajax.put(url, body, { ...getBaseHeaders(), ...headers })
 
 const patch = (url: string, body: any, headers?: any) =>
-  ajax.patch(url, body, Object.assign({}, getBaseHeaders(), headers))
+  ajax.patch(url, body, { ...getBaseHeaders(), ...headers })
 const remove = (url: string, headers?: any) =>
-  ajax.delete(url, Object.assign({}, getBaseHeaders(), headers))
+  ajax.delete(url, { ...getBaseHeaders(), ...headers })
 
 export default {
   get,
