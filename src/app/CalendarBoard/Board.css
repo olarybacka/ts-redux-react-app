@@ -1,0 +1,106 @@
+.calendar-wrapper {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  background-color: #282c34;
+  color: #f1f1f1;
+  padding: 5px;
+}
+
+.calendar-wrapper h4 {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.calendar-wrapper button {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 22px;
+  height: 22px;
+  overflow: hidden;
+  color: #282c34;
+  background-color: #282c34;
+  padding: 0;
+  border: none;
+  transition: 0.15s linear;
+}
+
+.calendar-wrapper button:hover {
+  background-color: #0d5bc3;
+  color: #0d5bc3;
+  cursor: pointer;
+}
+
+.calendar-wrapper button:focus {
+  outline: none;
+}
+
+.calendar-wrapper button.prev:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 10px solid #f1f1f1;
+}
+
+.calendar-wrapper button.next:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid #f1f1f1;
+}
+
+.calendar-wrapper button:last-of-type {
+  left: 40px;
+}
+
+.calendar-wrapper .month-label {
+  text-transform: capitalize;
+}
+.calendar-wrapper .month {
+  margin: 20px 10px 10px 10px;
+  border-bottom: 1px solid #989898;
+  border-right: 1px solid #989898;
+}
+.calendar-wrapper .week {
+  display: flex;
+  height: 100px;
+}
+.calendar-wrapper .day {
+  border-top: 1px solid #989898;
+  border-left: 1px solid #989898;
+  display: inline-flex;
+  flex: 1 1;
+  padding: 8px;
+  line-height: 0.8rem;
+  transition: 0.15s linear;
+  position: relative;
+  background-color: #646464;
+}
+.calendar-wrapper .day:hover {
+  background-color: #58b8fe;
+  cursor: pointer;
+  color: #212121;
+}
+.calendar-wrapper .day:hover.current-day:before {
+  background-color: #58b8fe;
+}
+.calendar-wrapper .day.current-day:before {
+  content: "";
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  background-color: #0d5bc3;
+  top: 0;
+  left: 0;
+  transition: 0.15s linear;
+}

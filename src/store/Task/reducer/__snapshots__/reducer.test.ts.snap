@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`taskReducer calls updateTask action 1`] = `
+Object {
+  "count": 0,
+  "error": "",
+  "next": null,
+  "previos": null,
+  "task": Object {
+    "description": "description",
+    "id": 1,
+    "title": "Title",
+  },
+  "tasks": Array [],
+}
+`;
+
+exports[`taskReducer calls updateTasks action 1`] = `
+Object {
+  "count": 0,
+  "error": "",
+  "next": null,
+  "previos": null,
+  "task": null,
+  "tasks": Array [
+    Object {
+      "description": "description",
+      "id": 1,
+      "title": "Title",
+    },
+  ],
+}
+`;
