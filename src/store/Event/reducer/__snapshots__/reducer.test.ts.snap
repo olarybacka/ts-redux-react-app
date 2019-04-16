@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventReducer calls updateEvent action 1`] = `
+Object {
+  "count": 0,
+  "error": "",
+  "event": Object {
+    "category": Object {
+      "id": 1,
+      "name": "name",
+    },
+    "description": "description",
+    "endDate": 2019-05-22T22:00:00.000Z,
+    "id": 1,
+    "location": "location",
+    "name": "Name",
+    "startDate": 2019-05-15T22:00:00.000Z,
+  },
+  "events": Array [],
+  "next": null,
+  "previos": null,
+}
+`;
+
+exports[`EventReducer calls updateEvents action 1`] = `
+Object {
+  "count": 0,
+  "error": "",
+  "event": null,
+  "events": Array [
+    Object {
+      "category": Object {
+        "id": 1,
+        "name": "name",
+      },
+      "description": "description",
+      "endDate": 2019-05-22T22:00:00.000Z,
+      "id": 1,
+      "location": "location",
+      "name": "Name",
+      "startDate": 2019-05-15T22:00:00.000Z,
+    },
+  ],
+  "next": null,
+  "previos": null,
+}
+`;
