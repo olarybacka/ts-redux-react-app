@@ -5,6 +5,7 @@ const currDate = new Date()
 export const INITIAL_STATE: CalendarState = {
   year: currDate.getFullYear(),
   month: currDate.getMonth(),
+  currentDay: currDate.getDate(),
 }
 
 const incrementMonth = (current: number): number => (current === 11 ? 0 : current + 1)

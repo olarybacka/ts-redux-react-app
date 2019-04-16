@@ -6,22 +6,22 @@ h4 {
 
 button {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 28px;
-  height: 28px;
+  top: 18px;
+  left: 18px;
+  width: 22px;
+  height: 22px;
   overflow: hidden;
   color: #282c34;
   background-color: #282c34;
   padding: 0;
   border: none;
-  transition: 0.150s linear;
-
+  transition: 0.15s linear;
 }
 
 button:hover {
-  background-color: #61dafb;
-  color: #61dafb;
+  background-color: #0d5bc3;
+  color: #0d5bc3;
+  cursor: pointer;
 }
 
 button:focus {
@@ -29,31 +29,29 @@ button:focus {
 }
 
 button.prev:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 4px;
-  right: 10px;
+  right: 6px;
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right: 10px solid #ececec;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 10px solid #f1f1f1;
 }
 
 button.next:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 4px;
-  left: 10px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #ececec;
+  left: 6px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid #f1f1f1;
 }
 
 button:last-of-type {
-  left: 48px;
+  left: 40px;
 }
 
 .month-label {
@@ -61,20 +59,39 @@ button:last-of-type {
 }
 .month {
   margin: 20px 10px 10px 10px;
-  border: 1px solid #ececec;
+  border-bottom: 1px solid #989898;
+  border-right: 1px solid #989898;
 }
 .week {
   display: flex;
   height: 100px;
 }
 .day {
+  border-top: 1px solid #989898;
+  border-left: 1px solid #989898;
   display: inline-flex;
   flex: 1 1;
-  border: 1px solid #ececec;
-  padding: 5px;
+  padding: 8px;
   line-height: 0.8rem;
-  transition: 0.150s linear;
+  transition: 0.15s linear;
+  position: relative;
+  background-color: #646464;
 }
 .day:hover {
-  background-color: #61dafb;
+  background-color: #58b8fe;
+  cursor: pointer;
+  color: #212121;
+}
+.day:hover.current-day:before {
+  background-color: #58b8fe;
+}
+.day.current-day:before {
+  content: "";
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  background-color: #0d5bc3;
+  top: 0;
+  left: 0;
+  transition: 0.15s linear;
 }

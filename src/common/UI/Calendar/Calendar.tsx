@@ -15,29 +15,29 @@ const { Calendar } = require("calendar")
 const cMon = new Calendar(1)
 const { increment, decrement } = actionCreators
 
-const renderDay = (day: number, i: number) => (
-  <div key={i} className="day">
+const renderDay = ( currDay: number ) => (day: number, i: number) => (
+  <div key={i} className={currDay === day ? 'current-day day' : "day"}>
     {day || ""}
   </div>
 )
-const renderWeek = (week: number[], i: number) => (
+const renderWeek = (currDay: number) => (week: number[], i: number) => (
   <div key={i} className="week">
-    {week.map(renderDay)}
+    {week.map(renderDay(currDay))}
   </div>
 )
 
 export default () => {
-  const [{ year, month }, dispatch]: [CalendarState, (action: Action) => void] = useReducer(
+  const [{ year, month, currentDay }, dispatch]: [CalendarState, (action: Action) => void] = useReducer(
     reducer,
     INITIAL_STATE,
   )
   return (
     <>
-      <h4 className="month-label">{format(new Date(year, month), "MMMM", { locale: pl })}</h4>
+      <h4 className="month-label">{currentDay} {format(new Date(year, month), "MMMM", { locale: pl })}</h4>
       <button className="prev" onClick={() => dispatch(decrement.create())} type="button">
         prev
       </button>
-      <div className="month">{cMon.monthDays(year, month).map(renderWeek)}</div>
+      <div className="month">{cMon.monthDays(year, month).map(renderWeek(currentDay))}</div>
       <div>{cMon.months}</div>
       <button className="next" onClick={() => dispatch(increment.create())} type="button">
         next
