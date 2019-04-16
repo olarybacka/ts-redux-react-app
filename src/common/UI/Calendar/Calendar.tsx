@@ -11,7 +11,7 @@ import {
 } from "../../../store/Calendar"
 import "./Calendar.css"
 
-const { monthDays } = new Calendar(1)
+const cMon = new Calendar(1)
 const { increment, decrement } = actionCreators
 
 const renderDay = (day: number, i: number) => (
@@ -44,7 +44,7 @@ export default () => {
       >
         prev
       </button>
-      <div className="month">{monthDays(year, month).map(renderWeek)}</div>
+      <div className="month">{cMon.monthDays(year, month).map(renderWeek)}</div>
       <button
         className="next"
         onClick={() => dispatch(increment.create())}
