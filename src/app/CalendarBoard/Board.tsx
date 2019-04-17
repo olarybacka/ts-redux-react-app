@@ -1,6 +1,6 @@
-import React from "react";
-import { Calendar } from "../../common/UI";
-import "./Board.css";
+import React from "react"
+import { Calendar } from "../../common/UI"
+import "./Board.css"
 
 export default () => {
   return (
@@ -10,5 +10,5 @@ export default () => {
         <Calendar />
       </div>
     </>
-  );
-};
+  )
+}
