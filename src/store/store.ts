@@ -5,14 +5,12 @@ import { combineEpics, createEpicMiddleware } from "redux-observable"
 import { createRootReducer } from "."
 import { history } from "../common/services"
 import { eventEpics, EventState } from "./Event"
-import { taskEpics, TaskState } from "./Task"
 
 const epicMiddleware = createEpicMiddleware()
-const rootEpic: any = combineEpics(taskEpics, eventEpics)
+const rootEpic: any = combineEpics(eventEpics)
 
 export interface RootState {
   history: (history: History) => any
-  task: TaskState
   event: EventState
 }
 
