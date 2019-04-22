@@ -1,5 +1,17 @@
-import { actionCreators, eventReducer, INITIAL_STATE } from ".."
-import { testEvent } from "../../../fixtures/Event"
+import { actionCreators, Event, eventReducer, INITIAL_STATE } from ".."
+
+export const testEvent: Event = {
+  id: 1,
+  name: "Name",
+  startDate: expect.any(Date),
+  endDate: expect.any(Date),
+  description: "description",
+  location: "location",
+  category: {
+    id: 1,
+    name: "name",
+  },
+}
 
 describe("EventReducer", () => {
   it("calls updateEvents action", () => {

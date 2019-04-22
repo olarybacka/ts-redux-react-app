@@ -28,8 +28,8 @@ const getEventsEpic: Epic<Action<null>, Action<any>, RootState> = actions$ =>
 const getEventEpic: Epic<Action<number>, Action<any>, RootState> = actions$ =>
   actions$.pipe(
     ofType(getEvent.type),
-    mergeMap(id =>
-      ajax.get(apiUrl(`event/${id}`)).pipe(
+    mergeMap(({ payload }) =>
+      ajax.get(apiUrl(`events/${payload}`)).pipe(
         mergeMap(({ response }) => of(updateEvent.create(response))),
         catchError(error => of(setError.create(error))),
       ),
